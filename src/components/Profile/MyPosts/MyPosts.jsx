@@ -2,9 +2,17 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Posts from './Posts/Posts';
 
+
 const MyPosts = (props) => {
 
-    return <div className={s.postsBlock}>
+    let postData = [
+        { id: 1, message: 'Hi, how are you?', likesCount: 12},
+        { id: 2, message: 'It\'s my first post', likesCount: 11}
+    ]
+
+
+    return (
+    <div className={s.postsBlock}>
         <h3>My posts</h3>
         <div>
             <div>
@@ -12,18 +20,16 @@ const MyPosts = (props) => {
             </div>
             <div>
                 <button>Add post</button>
-                <button>Remove</button>
             </div>
         </div>
         <div className={s.posts}>
-            <Posts message='Hi, how are you?' like='29' />
-            <Posts message="It's my first post" like='32' />
-            <Posts />
-            <Posts />
+            <Posts message={postData[0].message} likesCount={postData[0].likesCount} />
+            <Posts message={postData[1].message} likesCount={postData[1].likesCount} />
+          
         </div>
     </div>
 
-
+    )
 }
 
 export default MyPosts;
