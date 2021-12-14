@@ -12,9 +12,10 @@
 }
 
 .messages .message {
-
+color: white;
 }
 
 .dialogsItems .active {
   color: gold;
+  padding: 10px;
 }
