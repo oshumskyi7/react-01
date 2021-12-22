@@ -5,7 +5,6 @@ import Posts from './Posts/Posts';
 
 const MyPosts = (props) => {
 
-
     let postsElements =
         props.posts.map(p => <Posts message={p.message} likesCount={p.likesCount} />);
 
@@ -13,13 +12,13 @@ const MyPosts = (props) => {
 
     let onAddPost = () => {
         props.addPost();
-        
+
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
         props.updateNewPostText(text);
-       
+
     }
 
     return (
