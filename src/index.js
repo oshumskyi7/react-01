@@ -6,19 +6,11 @@ import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import MainJsApp from './App';
 
-// setInterval (() => {
-//   store.dispatch({type: "FAKE"})
-// }, 1000)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <MainJsApp />,
   document.getElementById('root')
 );
 

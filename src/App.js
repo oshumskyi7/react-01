@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { connect, Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Preloader from './components/Common/Preloader/Preloader';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
@@ -11,6 +11,7 @@ import News from './components/News/News';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import { initializeApp } from './redux/app-reducer';
+import store from './redux/redux-store';
 
 
 
@@ -47,4 +48,16 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
 
-export default connect(mapStateToProps, { initializeApp })(App);
+let AppContainer =  connect(mapStateToProps, { initializeApp })(App);
+
+const MainJsApp = (props) => {
+  return <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
+}
+
+export default MainJsApp;
