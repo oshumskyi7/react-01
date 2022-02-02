@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Posts.module.css';
 
-const Posts = (props) => {
+const Post = (props) => {
 
     return (
 
@@ -11,7 +11,7 @@ const Posts = (props) => {
             {props.message}
             <div>
                 
-                <span>{props.likesCount} like</span>
+                <span>like</span>{props.likesCount} 
 
             </div>
         </div>
@@ -22,4 +22,4 @@ const Posts = (props) => {
 
 }
 
-export default Posts;
+export default Post;

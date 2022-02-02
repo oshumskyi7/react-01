@@ -1,6 +1,5 @@
 import React, { createRef, useState } from "react";
 import { create } from "react-test-renderer";
-import cn from "classnames"
 import Paginator from "./Paginator";
 
 describe("Paginator component tests", () => {
